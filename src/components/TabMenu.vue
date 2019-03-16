@@ -18,7 +18,7 @@ export default {
       items: [
         { title: 'top', path: '/' },
         { title: 'profile', path: '/profile' },
-        { title: 'skills', path: '/skills' },
+        { title: 'weather', path: '/weather' },
         { title: 'outputs', path: '/outputs' }
       ]
     }
@@ -43,7 +43,7 @@ li {
   margin-left:10px;
   margin-right:10px;
   font-size: 14px;
-  background-color: skyblue;
+  background-color: #42b883;
   border-radius: 8px;
   position: relative;
 }
