@@ -1,7 +1,11 @@
 <template>
-  <div class="weather">
+  <div id="weather">
     <div>
       <h1>日本全国の天気</h1>
+      <p v-text="city">ここに地名が表示されます</p>
+      <p v-text="temp">ここに気温が表示されます</p>
+      <p v-text="conditon.main">ここに天気が表示されます</p>
+      <input @click="getIp" type="button" value="天気を取得">
       <div>
         <ol>
           <li v-for="(item, index) in items" :key=index>
@@ -13,21 +17,13 @@
           </li>
         </ol>
       </div>
-      <!-- <ul>
-        <li><nuxt-link :to="`/city/sapporo`">札幌</nuxt-link></li>
-        <li><nuxt-link :to="`city/tokyo`">東京</nuxt-link></li>
-        <li><nuxt-link :to="`city/tokyo`">茨城</nuxt-link></li>
-        <li><nuxt-link :to="`city/nagoya`">名古屋</nuxt-link></li>
-        <li><nuxt-link :to="`city/osaka`">大阪</nuxt-link></li>
-        <li><nuxt-link :to="`city/fukuoka`">福岡</nuxt-link></li>
-      </ul> -->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LinkButton',
+  name: 'Weather',
   data () {
     return {
       items: [
@@ -37,7 +33,26 @@ export default {
         { title: '名古屋', path: '/outputs' },
         { title: '大阪', path: '/outputs' },
         { title: '福岡', path: '/outputs' }
-      ]
+      ],
+
+      city: 'ここに地名が表示されます',
+      temp: 'ここに気温が表示されます',
+      conditon: 'ここに天気が表示されます'
+    }
+  },
+
+  methods: {
+    getIp () {
+      this.ip = '天気情報を取得しています'
+      this.$axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Tokyo,jp&units=metric&appid=57cb0a695c789061bf61a35dca406dd4`)
+        .then((response) => {
+          this.city = response.data.name
+          this.temp = response.data.main.temp
+          this.conditon = response.data.weather[0]
+        })
+        .catch((reason) => {
+          this.ip = '天気情報の取得に失敗しました'
+        })
     }
   }
 }
