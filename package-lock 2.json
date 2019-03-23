@@ -1844,11 +1844,6 @@
         "color-name": "^1.0.0"
       }
     },
-    "chartkick": {
-      "version": "3.0.2",
-      "resolved": "https://registry.npmjs.org/chartkick/-/chartkick-3.0.2.tgz",
-      "integrity": "sha512-EJmf7ikPKisW0/naKckCKXq1DW+K5VeCOpqXtWqsCauR+3DhnK/xV1/PEtJovCxH3vPuo/aUU7GwirU6FzBxdw=="
-    },
     "check-types": {
       "version": "7.4.0",
       "resolved": "https://registry.npmjs.org/check-types/-/check-types-7.4.0.tgz",
@@ -2731,18 +2726,14 @@
     "deep-equal": {
       "version": "1.0.1",
       "resolved": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.1.tgz",
-      "integrity": "sha1-9dJgKStmDghO/0zbyfCK0yR0SLU="
+      "integrity": "sha1-9dJgKStmDghO/0zbyfCK0yR0SLU=",
+      "dev": true
     },
     "deep-is": {
       "version": "0.1.3",
       "resolved": "https://registry.npmjs.org/deep-is/-/deep-is-0.1.3.tgz",
       "integrity": "sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=",
       "dev": true
-    },
-    "deepmerge": {
-      "version": "2.2.1",
-      "resolved": "https://registry.npmjs.org/deepmerge/-/deepmerge-2.2.1.tgz",
-      "integrity": "sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA=="
     },
     "define-properties": {
       "version": "1.1.3",
@@ -4953,15 +4944,6 @@
       "requires": {
         "inherits": "^2.0.3",
         "minimalistic-assert": "^1.0.1"
-      }
-    },
-    "hchs-vue-charts": {
-      "version": "1.2.8",
-      "resolved": "https://registry.npmjs.org/hchs-vue-charts/-/hchs-vue-charts-1.2.8.tgz",
-      "integrity": "sha1-kf0JIkqzjP07rB0kJ/DOXL1XZk8=",
-      "requires": {
-        "chart.js": "^2.3.0",
-        "vue": "^2.0.1"
       }
     },
     "he": {
@@ -10985,21 +10967,6 @@
       "version": "2.6.8",
       "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.8.tgz",
       "integrity": "sha512-+vp9lEC2Kt3yom673pzg1J7T1NVGuGzO9j8Wxno+rQN2WYVBX2pyo/RGQ3fXCLh2Pk76Skw/laAPCuBuEQ4diw=="
-    },
-    "vue-chartjs": {
-      "version": "3.4.2",
-      "resolved": "https://registry.npmjs.org/vue-chartjs/-/vue-chartjs-3.4.2.tgz",
-      "integrity": "sha512-EhoXUJ17+9isMLhJpOliS++xE5z5FM8iAVytIqnKofByVMr8AISRL/SCy3zvWbvzhjgQPStd9y6adMF5bnWQdg=="
-    },
-    "vue-chartkick": {
-      "version": "0.5.0",
-      "resolved": "https://registry.npmjs.org/vue-chartkick/-/vue-chartkick-0.5.0.tgz",
-      "integrity": "sha512-xZ/lhIj1/KawLeBdAHbvc/aIVOHhEPWI/4U2Ho+9dq/g4m1BZivQG7h6d1Wg0UUSPwahmSR88/XEVnqSypvYvw==",
-      "requires": {
-        "chartkick": "^3.0.0",
-        "deep-equal": "^1.0.1",
-        "deepmerge": "^2.1.1"
-      }
     },
     "vue-eslint-parser": {
       "version": "2.0.3",
