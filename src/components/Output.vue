@@ -1,8 +1,10 @@
 <template>
     <div class="output">
-        <div class="content" v-for="i in 6" :key=i>
-            <h3> {{ name }} </h3>
-            <p>  {{ text }} </p>
+        <div v-for="(item, index) in items" :key=index>
+            <div class="content">
+                <h3> {{ item.title }} </h3>
+                <p>  {{ item.text }} </p>
+            </div>
         </div>
     </div>
 </template>
@@ -12,8 +14,13 @@ export default {
   name: 'output',
   data () {
     return {
-      name: 'カメラアプリを作成した',
-      text: 'このような意図で作成しました。ここをこのように工夫しました。ここが難しかったです。今後はこうゆう機能を追加したいです'
+      items: [
+        { title: 'お天気アプリを作成した', text: 'このような意図で作成しました。' },
+        { title: 'VueCliを使用した', text: 'ここをこのように工夫しました。ここが難しかったです。今後はこうゆう機能を追加したいです' },
+        { title: 'Chart.jsを使用した', text: 'ここが難しかったです。' },
+        { title: 'OpenweatherMapのapi(weather)を使用した', text: '今後はこうゆう機能を追加したいです' },
+        { title: 'OpenweatherMapのapi(forecast)を使用した', text: 'このような意図で作成しました。ここをこのように工夫しました。ここが難しかったです。今後はこうゆう機能を追加したいです' }
+      ]
     }
   }
 }
