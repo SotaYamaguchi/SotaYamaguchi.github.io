@@ -10,14 +10,14 @@
       <div>
         <ol>
           <li v-for="(item, index) in items" :key=index>
-            <button @click="getIp(item.title), getCanvas(item.title)">
+            <button @click="click_Execute(item.title)">
               <p class="name">{{ item.title }}</p>
             </button>
           </li>
         </ol>
       </div>
       <div>
-        <div class="alert alert-info" v-show="loading">
+        <div v-show="loading">
           Loading・・・
         </div>
         <div v-show="chart != null">
@@ -56,9 +56,19 @@ export default {
   },
 
   methods: {
+    click_Execute (name) {
+      this.getIp(name)
+      this.getCanvas(name)
+    },
+
     getIp (name) {
       this.ip = '天気情報を取得しています'
-      this.$axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name},jp&units=metric&appid=57cb0a695c789061bf61a35dca406dd4`)
+      this.$axios.get('https://api.openweathermap.org/data/2.5/weather', {
+        params: {
+          q: name,
+          units: 'metric',
+          appid: '57cb0a695c789061bf61a35dca406dd4'
+        }})
         .then(response => {
           this.city = response.data.name
           this.temp = this.roundup(response.data.main.temp) + '℃'
@@ -81,8 +91,7 @@ export default {
           q: name,
           units: 'metric',
           appid: '57cb0a695c789061bf61a35dca406dd4'
-        }
-      })
+        }})
         .then(response => {
           this.dates = response.data.list.map(list => {
             return list.dt_txt
